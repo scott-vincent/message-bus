@@ -22,6 +22,8 @@ AWS CLI|https://aws.amazon.com/cli/|Optional but useful for showing SNS topics a
 
 The sample currently provided with JustSaying is too simplistic and only allows one subscriber per publisher (subscribers use the same queue!). I wanted a more realistic sample where there are multiple subscribers to the same message type. The lack of documentation in JustSaying made this seemingly simple task a lot more complicated as it was not obvious how to configure JustSaying to produce the desired results. I also wanted to document full step-by-step instructions on how to download everything required, how to configure everything and how to get the more realistic sample up and running from scratch.
 
+I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The modified version is in this repo along with a yaml file for configuring goaws.
+
 ## Instructions
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
@@ -45,9 +47,9 @@ The sample currently provided with JustSaying is too simplistic and only allows 
 ````
 5. Run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. Enter the following commands:
 ````
-    cd ???
-    copy <this repo>\
-    goaws
+    cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
+    copy <this repo>\goaws\conf\goaws.yaml conf\
+    goaws kitchen-orders
 ````
 ## Notes
 
