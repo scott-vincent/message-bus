@@ -16,7 +16,7 @@ Visual Studio 2019 Preview|https://visualstudio.microsoft.com/vs/preview/|The ID
 Go Lang|https://golang.org/|The command-line environment to build goaws|Not needed if you want to use real AWS SNS/SQS
 goaws|https://github.com/p4tin/goaws| An AWS SNS/SQS clone that runs locally|Written in Go
 justeat/JustSaying|https://github.com/justeat/JustSaying|A light-weight message bus on top of AWS services (SNS and SQS)|Written in C#
-AWS CLI|
+AWS CLI|https://aws.amazon.com/cli/|Optional but useful for showing SNS topics and SQS queues|Works with our clone (goaws) service
 
 ## Sample
 
@@ -25,14 +25,18 @@ The sample currently provided with JustSaying is too simplistic and only allows 
 ## Instructions
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
-2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Run the following commands:
-    go version
-    aws version
-3. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
+1. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Run the following commands:
+````
+go version
+aws version
+````
+1. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
+````
     User Key: dummy
     Secret Key: dummy
     Region: eu-west-1
     ???: JSON
+````
 
 ## Notes
 
