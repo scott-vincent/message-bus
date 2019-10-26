@@ -43,10 +43,11 @@ The sample currently provided with JustSaying is too simplistic and only allows 
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
     go build -o app/goaws.exe app/cmd/goaws.go
 ````
-5. Run goaws. Enter the following commands:
+5. Run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. Enter the following commands:
 ````
-    copy ???
     cd ???
+    copy <this repo>\
+    goaws
 ````
 ## Notes
 
