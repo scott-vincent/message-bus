@@ -11,7 +11,7 @@ Queues are created for each message type, each publisher and each subscriber. Th
 
 Name|Location|Description|Info
 ----|--------|-----------|----
-Visual Studio 2019 Preview|https://visualstudio.microsoft.com/vs/preview/|The IDE to build JustSaying and this sample|Currently, preview vesion is required to build with .NET Core 3.0
+Visual Studio 2019|https://visualstudio.microsoft.com/vs/|The IDE to build JustSaying and this sample|Supports .NET Core 3 (don't need Preview version)
 .NET Core 3.0 SDK|https://dotnet.microsoft.com/download/dotnet-core/3.0|The latest version of .NET Core Runtime and SDK
 Go Lang|https://golang.org/|The command-line environment to build goaws|Not needed if you want to use real AWS SNS/SQS
 goaws|https://github.com/p4tin/goaws| An AWS SNS/SQS clone that runs locally|Written in Go
