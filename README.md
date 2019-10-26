@@ -45,7 +45,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
     go build -o app/goaws.exe app/cmd/goaws.go
 ````
-5. Run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly. Enter the following commands:
+5. Configure and run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly. Enter the following commands:
 ````
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
     copy <this repo>\goaws\conf\goaws.yaml conf\
