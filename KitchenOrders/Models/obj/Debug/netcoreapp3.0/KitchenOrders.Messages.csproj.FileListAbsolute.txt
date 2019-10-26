@@ -1,0 +1,9 @@
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\bin\Debug\netcoreapp3.0\KitchenOrders.Messages.deps.json
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\bin\Debug\netcoreapp3.0\KitchenOrders.Messages.dll
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\bin\Debug\netcoreapp3.0\KitchenOrders.Messages.pdb
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\bin\Debug\netcoreapp3.0\JustSaying.Models.dll
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\obj\Debug\netcoreapp3.0\KitchenOrders.Messages.AssemblyInfoInputs.cache
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\obj\Debug\netcoreapp3.0\KitchenOrders.Messages.AssemblyInfo.cs
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\obj\Debug\netcoreapp3.0\KitchenOrders.Messages.csproj.CopyComplete
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\obj\Debug\netcoreapp3.0\KitchenOrders.Messages.dll
+C:\Users\scott\VisualStudio_Workspace\message-bus\KitchenOrders\Models\obj\Debug\netcoreapp3.0\KitchenOrders.Messages.pdb
