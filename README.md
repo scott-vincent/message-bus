@@ -25,12 +25,12 @@ The sample currently provided with JustSaying is too simplistic and only allows 
 ## Instructions
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
-1. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Run the following commands:
+2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Run the following commands:
 ````
-go version
-aws version
+    go version
+    aws version
 ````
-1. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
+3. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
 ````
     User Key: dummy
     Secret Key: dummy
