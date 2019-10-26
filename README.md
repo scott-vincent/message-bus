@@ -9,7 +9,14 @@ Queues are created for each message type, each publisher and each subscriber. Th
 
 ## Dependencies
 
-goaws
-JustEat/justsaying
+Name|Location|Description|Info
+----|--------|-----------|----
+goaws|https://github.com/p4tin/goaws| An AWS SNS/SQS clone that runs locally|Written in Go
+justeat/JustSaying|https://github.com/justeat/JustSaying|A light-weight message bus on top of AWS services (SNS and SQS)|Written in C#
+
+## Sample
+
+The sample currently provided with JustSaying is too simplistic and only allows one subscriber per publisher (subscribers use the same queue!). I wanted a more realistic sample where there are multiple subscribers to the same message type. The lack of documentation in JustSaying made this seemingly simple task a lot more complicated as it was not obvious how to configure JustSaying to produce the desired results. I also wanted to document full step-by-step instructions on how to download everything required, how to configure everything and how to get the more realistic sample up and running from scratch.
 
 ## Instructions
+
