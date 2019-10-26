@@ -25,7 +25,7 @@ The sample currently provided with JustSaying is too simplistic and only allows 
 ## Instructions
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
-2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Run the following commands:
+2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Enter the following commands:
 ````
     go version
     aws --version
@@ -36,6 +36,17 @@ The sample currently provided with JustSaying is too simplistic and only allows 
     AWS Secret Access Key: dummy
     Default region name: eu-west-1
     Default output format: json
+````
+4. Download and build goaws. Enter the following commands:
+````
+    go get github.com/p4tin/goaws/...
+    cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
+    go build -o app/goaws.exe app/cmd/goaws.go
+````
+5. Run goaws. Enter the following commands:
+````
+    copy ???
+    cd ???
 ````
 ## Notes
 
