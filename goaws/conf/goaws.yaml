@@ -1,0 +1,6 @@
+kitchen-orders:
+  Host: localhost
+  Port: 4100
+  AccountId: "123456781234"
+  LogToFile: false
+  LogFile: ./goaws_messages.log
