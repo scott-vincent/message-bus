@@ -70,6 +70,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Click Update
     Cick OK
 ````
+
    Everything should now build successfully
 ````
     Build -> Rebuild Solution
