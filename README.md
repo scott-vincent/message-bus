@@ -36,7 +36,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 ````
     AWS Access Key ID: dummy
     AWS Secret Access Key: dummy
-    Default region name: eu-west-1
+    Default region name: eu-west-2
     Default output format: json
 ````
 4. Download and build goaws. Enter the following commands:
@@ -70,6 +70,10 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Click Update
     Cick OK
 ````
+   Everything should now build successfully
+````
+    Build -> Rebuild Solution
+````
 8. Configure and run goaws.
 
    There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly.
@@ -79,6 +83,24 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
     copy C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\goaws\conf\goaws.yaml conf\
     goaws kitchen-orders
+````
+9. Run the sample services
+
+   Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
+   
+   Use the Swagger page to place an order. Click "Try it out" and Post an order.
+   
+10. Use AWS CLI to see what Topics and Queues have been created
+
+   Enter the following commands:
+````
+    aws --endpoint-url http://localhost:4100 sns list-topics
+    aws --endpoint-url http://localhost:4100 sqs list-queues
+````
+
+   If you stop the KitchenConsole service and place some orders they will be queued up. Use the following command to examine the queue:
+````
+    aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-ordersplacedevent
 ````
 ## Notes
 
