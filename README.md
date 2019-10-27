@@ -70,7 +70,9 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Click Update
     Cick OK
 ````
-8. Configure and run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly. Enter the following commands:
+8. Configure and run goaws.
+
+   There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly. Enter the following commands:
 ````
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
     copy C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\goaws\conf\goaws.yaml conf\
