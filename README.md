@@ -102,6 +102,8 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
    ````
    aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-orderplacedevent
    ````
+   Restart the KitchenConsole service to process the queued orders.
+   
 ## Notes
 
 The sample assumes you are using goaws rather than real AWS services. If you are using real AWS you need to change some of the configuration files and tweak the source code (see the comments in the source).
