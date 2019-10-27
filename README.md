@@ -100,7 +100,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
    ````
    If you stop the KitchenConsole service and place some orders they will be queued up. Use the following command to examine the queue:
    ````
-   aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-ordersplacedevent
+   aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-orderplacedevent
    ````
 ## Notes
 
