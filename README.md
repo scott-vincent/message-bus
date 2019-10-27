@@ -70,7 +70,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Click Update
     Cick OK
 ````
-   Everything should now build successfully
+    Everything should now build successfully
 ````
     Build -> Rebuild Solution
 ````
@@ -89,17 +89,6 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
    Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
    
    Use the Swagger page to place an order. Click 'Try it out' and Post an order.
-
-1. Blah
-
-   Enter the following commands:
-
-1. Use AWS CLI to see what Topics and Queues have been created
-
-   Enter the following commands:
-````
-    blah
-````
 
 1. Use AWS CLI to see what Topics and Queues have been created
 
