@@ -89,7 +89,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 
    Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
    
-   Use the Swagger page to place an order. Click "Try it out" and Post an order.
+   Use the Swagger page to place an order. Click "Try it out" and Post an order. View the KitchenConsole output window to see what happened.
 
 1. Use AWS CLI to see what Topics and Queues have been created
 
