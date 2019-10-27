@@ -53,7 +53,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 ````
 6. Download JustSaying and build NuGet packages. Enter the following commands:
 ````
-    cd C:\users\<your_user>
+    cd C:\users\<your_user>\<your_visualstudio_workspace>
     git clone https://github.com/justeat/JustSaying.git
     powershell -ExecutionPolicy ByPass -File JustSaying\build.ps1
 ````
