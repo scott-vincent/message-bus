@@ -28,80 +28,70 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
 2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Enter the following commands:
-````
-    go version
-    aws --version
-````
+   ````go version
+   aws --version
+   ````
 3. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
-````
-    AWS Access Key ID: dummy
-    AWS Secret Access Key: dummy
-    Default region name: eu-west-2
-    Default output format: json
-````
+   ````AWS Access Key ID: dummy
+   AWS Secret Access Key: dummy
+   Default region name: eu-west-2
+   Default output format: json
+   ````
 4. Download and build goaws. Enter the following commands:
-````
-    go get github.com/p4tin/goaws/...
-    cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
-    go build -o app/goaws.exe app/cmd/goaws.go
-````
+   ````go get github.com/p4tin/goaws/...
+   cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
+   go build -o app/goaws.exe app/cmd/goaws.go
+   ````
 5. Download JustSaying and build NuGet packages. Enter the following commands:
-````
-    cd C:\users\<your_user>\<your_visualstudio_workspace>
-    git clone https://github.com/justeat/JustSaying.git
-    powershell -ExecutionPolicy ByPass -File JustSaying\build.ps1
-````
+   ````cd C:\users\<your_user>\<your_visualstudio_workspace>
+   git clone https://github.com/justeat/JustSaying.git
+   powershell -ExecutionPolicy ByPass -File JustSaying\build.ps1
+   ````
 6. Download this repository. Enter the following commands:
-````
-    cd C:\users\<your_user>\<your_visualstudio_workspace>
-    git clone https://github.com/scott-vincent/message-bus.git
-````
+   ```cd C:\users\<your_user>\<your_visualstudio_workspace>
+   git clone https://github.com/scott-vincent/message-bus.git
+   ````
 7. Build the message-bus sample.
 
    Run VisualStudio and load C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\KitchenOrders\KitchenOrders.sln
 
    Configure Package Manager to locate the JustSaying packages you have built locally.
-````
-    Tools -> NuGet Package Manager -> Package Manager Settings
-    Select Package Sources on left pane
-    Click + on right pane
-    Name: JustSaying
-    Source: C:\users\<your_user>\<your_visualstudio_workspace>\JustSaying\artifacts
-    Click Update
-    Cick OK
-````
+   ````Tools -> NuGet Package Manager -> Package Manager Settings
+   Select Package Sources on left pane
+   Click + on right pane
+   Name: JustSaying
+   Source: C:\users\<your_user>\<your_visualstudio_workspace>\JustSaying\artifacts
+   Click Update
+   Cick OK
+   ````
    Everything should now build successfully
-````
-    Build -> Rebuild Solution
-````
+   ````Build -> Rebuild Solution
+   ````
 
 8. Configure and run goaws.
 
    There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly.
 
    Enter the following commands:
-````
-    cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
-    copy C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\goaws\conf\goaws.yaml conf\
-    goaws kitchen-orders
-````
+   ````cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
+   copy C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\goaws\conf\goaws.yaml conf\
+   goaws kitchen-orders
+   ````
 9. Run the sample services
 
    Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
    
    Use the Swagger page to place an order. Click 'Try it out' and Post an order.
 
-1. Use AWS CLI to see what Topics and Queues have been created
+10. Use AWS CLI to see what Topics and Queues have been created
 
    Enter the following commands:
-````
-    aws --endpoint-url http://localhost:4100 sns list-topics
-    aws --endpoint-url http://localhost:4100 sqs list-queues
-````
+   ````aws --endpoint-url http://localhost:4100 sns list-topics
+   aws --endpoint-url http://localhost:4100 sqs list-queues
+   ````
    If you stop the KitchenConsole service and place some orders they will be queued up. Use the following command to examine the queue:
-````
-    aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-ordersplacedevent
-````
+   ````aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-ordersplacedevent
+   ````
 ## Notes
 
 The sample assumes you are using goaws rather than real AWS services. If you are using real AWS you need to change some of the configuration files and tweak the source code (see the comments in the source).
