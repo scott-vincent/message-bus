@@ -59,7 +59,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 7. Build the message-bus sample.
 
    Run VisualStudio and load C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\KitchenOrders\KitchenOrders.sln
-   
+
    Configure Package Manager to locate the JustSaying packages you have built locally.
 ````
     Tools -> NuGet Package Manager -> Package Manager Settings
@@ -70,7 +70,6 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Click Update
     Cick OK
 ````
-
    Everything should now build successfully
 ````
     Build -> Rebuild Solution
@@ -78,7 +77,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 8. Configure and run goaws.
 
    There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly.
-   
+
    Enter the following commands:
 ````
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
@@ -89,16 +88,26 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 
    Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
    
-   Use the Swagger page to place an order. Click "Try it out" and Post an order.
-   
-10. Use AWS CLI to see what Topics and Queues have been created
-   
+   Use the Swagger page to place an order. Click 'Try it out' and Post an order.
+
+1. Blah
+
+   Enter the following commands:
+
+1. Use AWS CLI to see what Topics and Queues have been created
+
+   Enter the following commands:
+````
+    blah
+````
+
+1. Use AWS CLI to see what Topics and Queues have been created
+
    Enter the following commands:
 ````
     aws --endpoint-url http://localhost:4100 sns list-topics
     aws --endpoint-url http://localhost:4100 sqs list-queues
 ````
-   
    If you stop the KitchenConsole service and place some orders they will be queued up. Use the following command to examine the queue:
 ````
     aws --endpoint-url http://localhost:4100 sqs get-queue-attributes --queue-url http://localhost:4100/kitchenconsole-ordersplacedevent
