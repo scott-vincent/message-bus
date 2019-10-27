@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using KitchenOrders.KitchenConsole.Handlers;
 using KitchenOrders.Messages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -54,11 +55,14 @@ namespace KitchenOrders.KitchenConsole
                        config.Subscriptions(x =>
                        {
                            // Creates the following if they do not already exist
-                           //  - a SQS queue of name `orderplacedevent`
-                           //  - a SQS queue of name `orderplacedevent_error`
+                           //  - a SQS queue of name `kitchenconsole-orderplacedevent`
+                           //  - a SQS queue of name `kitchenconsole-orderplacedevent_error`
                            //  - a SNS topic of name `orderplacedevent`
-                           //  - a SNS topic subscription on topic 'orderplacedevent' and queue 'orderplacedevent'
-                           x.ForTopic<OrderPlacedEvent>("KitchenConsole");
+                           //  - a SNS topic subscription on topic 'orderplacedevent'
+                           x.ForTopic<OrderPlacedEvent>(QueueName.Create<OrderPlacedEvent>(configuration));
+
+                           // Add another subscription just to show that we can (subscribing to our own publish!)
+                           x.ForTopic<OrderReadyEvent>(QueueName.Create<OrderReadyEvent>(configuration));
                        });
 
                        config.Publications(x =>
@@ -69,8 +73,11 @@ namespace KitchenOrders.KitchenConsole
                        });
                    });
 
-                   // Added a message handler for message type for 'OrderPlacedEvent' on topic 'orderplacedevent' and queue 'orderplacedevent'
+                   // Added a message handler for message type for 'OrderPlacedEvent' on topic 'orderplacedevent'
                    services.AddJustSayingHandler<OrderPlacedEvent, OrderPlacedEventHandler>();
+
+                   // Added another message handler for message type for 'OrderReadyEvent' on topic 'orderreadyevent'
+                   services.AddJustSayingHandler<OrderReadyEvent, OrderReadyEventHandler>();
 
                    // Add a background service that is listening for messages related to the above subscriptions
                    services.AddHostedService<Subscriber>();

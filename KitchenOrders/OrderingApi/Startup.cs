@@ -49,11 +49,14 @@ namespace KitchenOrders.OrderingApi
                 config.Subscriptions(x =>
                 {
                     // Creates the following if they do not already exist
-                    //  - a SQS queue of name `orderreadyevent`
-                    //  - a SQS queue of name `orderreadyevent_error`
+                    //  - a SQS queue of name `orderingapi-orderreadyevent`
+                    //  - a SQS queue of name `orderingapi-orderreadyevent_error`
                     //  - a SNS topic of name `orderreadyevent`
-                    //  - a SNS topic subscription on topic 'orderreadyevent' and queue 'orderreadyevent'
-                    x.ForTopic<OrderReadyEvent>("OrderingApi");
+                    //  - a SNS topic subscription on topic 'orderreadyevent'
+                    x.ForTopic<OrderReadyEvent>(QueueName.Create<OrderReadyEvent>(_configuration));
+
+                    // Add another subscription just to show that we can (subscribing to our own publish!)
+                    x.ForTopic<OrderPlacedEvent>(QueueName.Create<OrderPlacedEvent>(_configuration));
                 });
                 config.Publications(x =>
                 {
@@ -63,8 +66,11 @@ namespace KitchenOrders.OrderingApi
                 });
             });
 
-            // Added a message handler for message type for 'OrderReadyEvent' on topic 'orderreadyevent' and queue 'orderreadyevent'
+            // Added a message handler for message type for 'OrderReadyEvent' on topic 'orderreadyevent'
             services.AddJustSayingHandler<OrderReadyEvent, OrderReadyEventHandler>();
+
+            // Added another message handler for message type for 'OrderPlacedEvent' on topic 'orderplacedevent'
+            services.AddJustSayingHandler<OrderPlacedEvent, OrderPlacedEventHandler>();
 
             // Add a background service that is listening for messages related to the above subscriptions
             services.AddHostedService<Subscriber>();

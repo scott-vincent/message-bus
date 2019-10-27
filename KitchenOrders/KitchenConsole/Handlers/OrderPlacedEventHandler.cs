@@ -5,7 +5,7 @@ using JustSaying.Messaging.MessageHandling;
 using KitchenOrders.Messages;
 using Microsoft.Extensions.Logging;
 
-namespace KitchenOrders.KitchenConsole
+namespace KitchenOrders.KitchenConsole.Handlers
 {
     public class OrderPlacedEventHandler : IHandlerAsync<OrderPlacedEvent>
     {
