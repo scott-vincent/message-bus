@@ -16,6 +16,7 @@ namespace KitchenOrders.KitchenConsole.Handlers
 
         public Task<bool> Handle(OrderReadyEvent message)
         {
+            // This subscription isn't needed but just proves we can have multiple subscribers
             _log.LogInformation("Why am I telling myself that order {orderId} is ready!", message.OrderId);
             return Task.FromResult(true);
         }

@@ -24,6 +24,7 @@ namespace KitchenOrders.OrderingApi.Handlers
 
         public Task<bool> Handle(OrderPlacedEvent message)
         {
+            // This subscription isn't needed but just proves we can have multiple subscribers
             _logger.LogInformation("Why am I telling myself that order {orderId} was placed!", message.OrderId);
             return Task.FromResult(true);
         }
