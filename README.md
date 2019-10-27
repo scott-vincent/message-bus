@@ -57,9 +57,11 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     git clone https://github.com/scott-vincent/message-bus.git
 ````
 7. Build the message-bus sample.
-    Run VisualStudio and load C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\KitchenOrders\KitchenOrders.sln
-    Configure Package Manager to locate the JustSaying packages you have built locally.
-    ````
+
+   Run VisualStudio and load C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\KitchenOrders\KitchenOrders.sln
+   
+   Configure Package Manager to locate the JustSaying packages you have built locally.
+````
     Tools -> NuGet Package Manager -> Package Manager Settings
     Select Package Sources on left pane
     Click + on right pane
@@ -67,7 +69,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     Source: C:\users\<your_user>\<your_visualstudio_workspace>\JustSaying\artifacts
     Click Update
     Cick OK
-    ````
+````
 8. Configure and run goaws. There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly. Enter the following commands:
 ````
     cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
