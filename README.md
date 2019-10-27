@@ -51,6 +51,12 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
     copy <this repo>\goaws\conf\goaws.yaml conf\
     goaws kitchen-orders
 ````
+6. Download JustSaying and build NuGet packages. Enter the following commands:
+````
+    cd C:\users\<your_user>
+    git clone https://github.com/justeat/JustSaying.git
+    powershell -ExecutionPolicy ByPass -File JustSaying\build.ps1
+````
 ## Notes
 
 The sample assumes you are using goaws rather than real AWS services. If you are using real AWS you need to change some of the configuration files and tweak the source code (see the comments in the source).
