@@ -27,36 +27,36 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
 ## Instructions
 
 1. Download and install Visual Studio, .NET Core SDK, Go Lang and AWS CLI.
-2. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Enter the following commands:
+1. Check that everything is installed ok. Some of the installers update the PATH so make sure you open a new Command Prompt window after all the installers have run. Enter the following commands:
    ````
    go version
    aws --version
    ````
-3. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
+1. As we are not using real AWS you can configure AWS CLI with dummy credentials. Run "aws configure" and set the following:
    ````
    AWS Access Key ID: dummy
    AWS Secret Access Key: dummy
    Default region name: eu-west-2
    Default output format: json
    ````
-4. Download and build goaws. Enter the following commands:
+1. Download and build goaws. Enter the following commands:
    ````
    go get github.com/p4tin/goaws/...
    cd C:\users\<your_user>\go\src\github.com\p4tin\goaws
    go build -o app/goaws.exe app/cmd/goaws.go
    ````
-5. Download JustSaying and build NuGet packages. Enter the following commands:
+1. Download JustSaying and build NuGet packages. Enter the following commands:
    ````
    cd C:\users\<your_user>\<your_visualstudio_workspace>
    git clone https://github.com/justeat/JustSaying.git
    powershell -ExecutionPolicy ByPass -File JustSaying\build.ps1
    ````
-6. Download this repository. Enter the following commands:
+1. Download this repository. Enter the following commands:
    ````
    cd C:\users\<your_user>\<your_visualstudio_workspace>
    git clone https://github.com/scott-vincent/message-bus.git
    ````
-7. Build the message-bus sample.
+1. Build the message-bus sample.
 
    Run VisualStudio and load C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\KitchenOrders\KitchenOrders.sln
 
@@ -75,7 +75,7 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
    Build -> Rebuild Solution
    ````
 
-8. Configure and run goaws.
+1. Configure and run goaws.
 
    There is a YAML file that configures goaws and you specify which profile you want on the command line. You can either replace the YAML file with my version or just append my version to the end of the original. Note that goaws runs on port 4100. If you want it to run on a different port just modify the YAML file accordingly.
 
@@ -85,13 +85,13 @@ I've taken the kitchen/orderingApi sample from JustSaying and expanded it. The m
    copy C:\users\<your_user>\<your_visualstudio_workspace>\message-bus\goaws\conf\goaws.yaml conf\
    goaws kitchen-orders
    ````
-9. Run the sample services
+1. Run the sample services
 
    Start two copies of VisualStudio. Run KitchenConsole in one and OrderingApi in the other.
    
-   Use the Swagger page to place an order. Click 'Try it out' and Post an order.
+   Use the Swagger page to place an order. Click "Try it out" and Post an order.
 
-10. Use AWS CLI to see what Topics and Queues have been created
+1. Use AWS CLI to see what Topics and Queues have been created
 
    Enter the following commands:
    ````
